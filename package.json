@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/Kavya-rajkumar99/DivingDeepInReact#readme",
   "devDependencies": {
-    "parcel": "^2.9.3",
+    "parcel": "^2.8.3",
     "process": "^0.11.10"
   },
   "dependencies": {
