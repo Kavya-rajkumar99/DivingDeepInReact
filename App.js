@@ -1,25 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-const header = React.createElement(
-  "h1",
-  { id: "heading" },
-  "Hello world from react"
+
+//React element
+const spanEl = <span>paragraph</span>;
+
+//Composing a react element in a react element
+const para = <h3>I am a {spanEl}</h3>;
+
+//React Component
+const Title = () => (
+  <h1 id="heading" tabIndex="1">
+    Namaste React using JSX
+  </h1>
 );
-console.log("heading", header);
+
+//Component Composition - composing a react component and a react element in a raect component
+const Heading = () => (
+  <div id="container">
+    <Title />
+    <h2>This is a heading 🚀</h2>
+    {para}
+  </div>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log("Root iss", root);
-root.render(header);
-
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child", key: "child" }, [
-    React.createElement("h1", { key: "h1" }, "I am h1 tag inside child"),
-    React.createElement("h2", { key: "h2" }, "I am h2 tag inside child"),
-  ]),
-  React.createElement("div", { id: "child2", key: "child2" }, [
-    React.createElement("h1", { key: "h1" }, "I am h1 tag inside child"),
-    React.createElement("h2", { key: "h2" }, "I am h2 tag inside child"),
-  ]),
-]);
-console.log("Parent", parent);
-root.render(parent);
+root.render(<Heading />);
